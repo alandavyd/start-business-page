@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
 
   let urlPath = req.url === '/' ? '/index.html' : req.url;
-  urlPath = urlPath.split('?')[0];
+  urlPath = decodeURIComponent(urlPath.split('?')[0]);
 
   // Special route: /brain/:filename  → serve from brain artifact dir
   if (urlPath.startsWith('/brain/')) {

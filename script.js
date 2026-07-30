@@ -54,7 +54,7 @@ createParticles();
 
 // --- COUNTDOWN ---
 function updateCountdown() {
-  const eventDate = new Date('2026-11-15T09:00:00');
+  const eventDate = new Date('2026-09-28T09:00:00');
   const now = new Date();
   const diff = eventDate - now;
 

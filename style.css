@@ -217,36 +217,43 @@ img { max-width: 100%; display: block; }
 /* Single composite image container */
 .hero-speakers-composite {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
-  width: 65%;
+  bottom: 0;
+  width: 62%;
   height: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
   overflow: hidden;
 }
 .composite-img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
   filter: contrast(1.05) brightness(0.95);
+  -webkit-mask-image: radial-gradient(ellipse 75% 85% at 50% 50%, #000 50%, transparent 95%);
+  mask-image: radial-gradient(ellipse 75% 85% at 50% 50%, #000 50%, transparent 95%);
 }
 
 /* Bottom + left gradient for content */
 .hero-overlay-bottom {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 45%;
-  background: linear-gradient(to top, rgba(7,5,9,1) 0%, rgba(7,5,9,0.65) 55%, transparent 100%);
+  height: 35%;
+  background: linear-gradient(to top, rgba(7,5,9,1) 0%, rgba(7,5,9,0.5) 60%, transparent 100%);
   z-index: 4;
+  pointer-events: none;
 }
 .hero-overlay-left {
   position: absolute;
   top: 0; left: 0; bottom: 0;
-  width: 55%;
-  background: linear-gradient(to right, rgba(7,5,9,0.96) 0%, rgba(7,5,9,0.6) 65%, transparent 100%);
+  width: 50%;
+  background: linear-gradient(to right, rgba(7,5,9,0.98) 0%, rgba(7,5,9,0.7) 60%, transparent 100%);
   z-index: 4;
+  pointer-events: none;
 }
 
 /* Hero content (bottom-left like reference) */
@@ -421,7 +428,7 @@ img { max-width: 100%; display: block; }
    SPEAKERS
 ============================================ */
 .speakers-section { padding: 120px 0; background: var(--dark-2); }
-.speakers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
+.speakers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: start; }
 .speaker-card {
   background: linear-gradient(160deg, var(--dark-3), var(--dark-4));
   border: 1px solid var(--border-soft);
